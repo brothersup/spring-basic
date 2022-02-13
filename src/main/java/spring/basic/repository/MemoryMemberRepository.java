@@ -21,6 +21,13 @@ public class MemoryMemberRepository implements MemberRepository {
     }
 
     @Override
+    public Optional<Member> findByGameId(String gameId) {
+        return store.values().stream()
+                .filter(member -> member.getGameId().equals(gameId))
+                .findAny();
+    }
+
+    @Override
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
     }
