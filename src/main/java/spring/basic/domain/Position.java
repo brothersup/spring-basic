@@ -1,10 +1,9 @@
 package spring.basic.domain;
 
-public enum Role {
-    STAFF,
+public enum Position {
     TOP,
     JUNGLE,
     MID,
     ADC,
-    SUP
+    SUP,
 }
