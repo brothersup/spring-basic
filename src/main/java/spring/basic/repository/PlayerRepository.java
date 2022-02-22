@@ -15,4 +15,5 @@ public interface PlayerRepository {
     Player save(Player player);
     void delete(Player player);
     void deleteAll();
+    int getCount();
 }

@@ -50,7 +50,10 @@ public class MemoryPlayerRepository implements PlayerRepository {
             throw new RuntimeException();
         });
 
-        player.setId(++sequence);
+        if (player.getId() == null) {
+            player.setId(++sequence);
+        }
+
         store.put(player.getId(), player);
         return player;
     }
@@ -63,5 +66,10 @@ public class MemoryPlayerRepository implements PlayerRepository {
     @Override
     public void deleteAll() {
         store.clear();
+    }
+
+    @Override
+    public int getCount() {
+        return store.size();
     }
 }
